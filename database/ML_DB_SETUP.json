@@ -1,0 +1,9 @@
+{
+  "rest-api": {
+    "name": "foodfetchercrawl-app-server",
+    "database": "foodFetcherCrawl-db",
+    "modules-database": "foodFetcherCrawl-db-modules",
+    "port": "7080",
+    "forests-per-host": 3
+  }
+}

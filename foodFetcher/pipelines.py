@@ -45,6 +45,8 @@ class ProcessingPipeline(object):
             self.db = Database.lookup(self.conn, self.db_name)
             if self.db == None:
                 log.msg("---{0}: MarkLogic Database {1} does not exist, creating on host: {2}.".format(self.name, self.db_name, self.ML_Host), level=log.DEBUG)
+                hosts = Host.list(self.conn)
+                self.db = Database(self.db_name, hosts[0])
                 self.db.create(self.conn)
             else:
                 log.msg("---{0}: MarkLogic Database {1} already exists on host: {2}.".format(self.name, self.db_name, self.ML_Host), level=log.DEBUG)                    

@@ -1,1 +1,2 @@
-^http://www.ubuntu.com/tablet/*
+^http://www.example.com/tablet/*
+^(file|ftp|mailto):

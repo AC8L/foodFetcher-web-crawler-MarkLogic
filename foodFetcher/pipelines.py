@@ -88,6 +88,7 @@ class ProcessingPipeline(object):
         root_name = "{0}CrawlingResult".format(self.name)
         my_xml = ET.Element( root_name )
         my_id = ET.SubElement(my_xml, 'uuid')
+        my_time = ET.SubElement(my_xml, 'crawledTime')
         my_url = ET.SubElement(my_xml, 'url')
         my_title = ET.SubElement(my_xml, 'title')
         my_fullText = ET.SubElement(my_xml, 'fullText')
@@ -96,6 +97,7 @@ class ProcessingPipeline(object):
         my_fullTextSHA1 = ET.SubElement(my_xml, 'fullTextSHA1')
 
         my_id.text = item['uuid']
+        my_time.text = item['crawledTime']
         my_url.text = item['url']
         my_title.text = item['title']
         my_fullText.text = item['fullText']

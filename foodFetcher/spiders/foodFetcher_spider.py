@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import uuid
 import re
 import hashlib
+from datetime import datetime
 
 class foodFetcherSpider(CrawlSpider):
     name = 'foodFetcher'
@@ -52,6 +53,7 @@ class foodFetcherSpider(CrawlSpider):
         
         item = foodFetcherItem()
         item['uuid'] = myuuid
+        item['crawledTime'] = datetime.utcnow().isoformat()         
         item['title'] = soup.title.string       
         item['url'] = response.url.lower()
         item['fullText'] = self.clean_text(soup)

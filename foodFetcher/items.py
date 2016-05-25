@@ -13,9 +13,11 @@ class foodFetcherItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     uuid = Field()
+    crawledTime = Field()
     title = Field()
     url = Field()
     fullText = Field()
     titleSHA1 = Field()
     urlSHA1 = Field()
     fullTextSHA1 = Field()
+

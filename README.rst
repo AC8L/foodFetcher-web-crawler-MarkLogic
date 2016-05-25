@@ -1,6 +1,16 @@
-==============================
-foodFetcher spider
-==============================
+==================================
+foodFetcher spider and web crawler
+==================================
+
+I needed a simple web crawler for my academic research to store results in MarkLogic database. While there are many great web crawling tools
+over there, some of them are dependent of hadoop and Solr (like Apache Nutch) and some (like in few Scrapy tutorials) were storing results
+in MongoDB. In addition, all the sample code I was able to find had problems with content encoding and text extraction. BTW, that applies to Nutch
+as well. So, quick research showed that Scrapy was a good framework that would allow building a spider/crawler quickly and integrating a custom
+content pipeline. At the same time it is written in python and MarkLogic provides an official API for it. Finally, comparing free text extraction
+python libraries, BeautifulSoup apperas to be the most robust for handling mixed text encoding, special characters and html pages with bunch of
+garbage in them. Although some fellows complain it is slow but it performs reasonably fast for our purposes.
+
+So, this is how foodFetcher was born. foodFetcher=python,scrapy,BeautifulSoup,MarkLogic.
 
 About
 =====
@@ -10,6 +20,7 @@ The output can be stored in MarkLogic database and/or optionally in local file f
 Prerequisites
 =============
 	- Python 3 (was developed and tested in 3.5.1)
+	- BeautifulSoup4 (python text manipulation library)
 	- Scrapy (was developed and tested in 1.1.0)
 	- MarkLogic Python API
 
@@ -18,7 +29,7 @@ Installation
 Install prerequisites, clone repository and you are ready to go.
 foodFetcher was tested and found to run well on Mac OS X (10.11), Centos 7 and on Windows 7 through Cygwin (2.5.1).
 On Windows python, scrapy and MarkLogic Python API have to be installed through Cygwin setup tools, not windows installers.
-Scrapy has to be installed using pip (pip3). It also requires certain cygwin development packages to be present (e.g. openssl-devel, etc.)
+Scrapy has to be installed using pip (pip3). It also requires certain cygwin development packages to be present (e.g. xslt-devel, openssl-devel, etc.)
 but process is quite trivial.
 
 Configuration

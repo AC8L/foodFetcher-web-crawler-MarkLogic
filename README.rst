@@ -40,9 +40,9 @@ nohup ./crawler.sh &
 
 Additional tools
 ================
-There are few unox and windows script files in database directory to manually create the MarkLogic database and wipe it out if necessary.
-Creating a database is not necessary as crawler automatically creates it if it does not already exists.
-ml_test.py file is for the demonatration purposes of using a MarkLogic API to ingest a local file.
+There are few unix and windows script files in database directory to manually create the MarkLogic database and wipe it out if necessary.
+Creating the database manually is not required as the foodFetcher automatically creates it if it does not already exist.
+ml_test.py file is for the demonstration purposes of using MarkLogic API to ingest a local file.
 For bulk ingestion of crawler results there are ml_ingest unix and windows scripts relying on MarkLogic mlcp tool (was tested on mlcp version 8.0-5).
 
 Support

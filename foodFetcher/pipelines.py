@@ -31,9 +31,9 @@ class ProcessingPipeline(object):
         if not os.path.exists(self.OUTFolder):
             os.makedirs(self.OUTFolder)
 
+        self.fmt = settings['MARKLOGIC_FORMAT']
         self.DO_MarkLogic = settings['MARKLOGIC_UPLOAD']
         if self.DO_MarkLogic:
-            self.fmt = settings['MARKLOGIC_FORMAT']
             self.KeepOrig = settings['MARKLOGIC_KEEP_ORIGINAL_FILE']
             self.ML_Host = settings['MARKLOGIC_HOSTNAME']
             log.msg("---{0} MARKLOGIC_HOSTNAME={1}".format(self.name, self.ML_Host), level=log.DEBUG)
